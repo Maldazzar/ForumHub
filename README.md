@@ -1,53 +1,61 @@
-# 🧠 ForumHub
+🧠 ForumHub
 
-Projeto de fórum de perguntas e respostas desenvolvido com Java e Spring Boot, inspirado na estrutura de fóruns como o da Alura. O objetivo é praticar os principais conceitos de APIs REST, autenticação com JWT, persistência com JPA, e versionamento de banco de dados com Flyway.
+API de fórum de perguntas e respostas desenvolvida em Java com Spring Boot, inspirada em fóruns como o da Alura.
+O objetivo é praticar a construção de APIs REST seguras, com autenticação JWT, persistência com JPA, e controle de versão do banco com Flyway.
 
----
+🚀 Tecnologias utilizadas
 
-## 🚀 Tecnologias utilizadas
+Java 21
 
-- Java 21  
-- Spring Boot 3.5  
-- Spring Web  
-- Spring Security  
-- Spring Data JPA  
-- MySQL  
-- Flyway (controle de versões do banco)  
-- Swagger UI (documentação da API)  
-- Maven  
-- JWT (JSON Web Token)
+Spring Boot 3.5
 
----
+Spring Web
 
-## ⚙️ Funcionalidades implementadas
+Spring Security
 
-- Cadastro e autenticação de usuários
-- Criação de tópicos
-- Respostas em tópicos
-- Proteção de rotas com JWT
-- Validações com Bean Validation (`@Valid`)
-- Documentação de endpoints com Swagger
-- Migrations com Flyway
+Spring Data JPA
 
----
+MySQL
 
-## 🛠️ Como executar localmente
+Flyway (controle de versões do banco)
 
-### ✅ Pré-requisitos:
+Swagger UI (documentação da API)
 
-- Java 21
-- MySQL rodando localmente (porta 3306)
-- Maven
+Maven
 
-### 📥 Passos:
+JWT (JSON Web Token)
 
-```bash
+⚙️ Funcionalidades
+
+Cadastro e autenticação de usuários
+
+Criação, listagem, atualização e exclusão de tópicos
+
+Respostas em tópicos
+
+Proteção de rotas com JWT
+
+Validações com Bean Validation (@Valid)
+
+Documentação de endpoints com Swagger
+
+Migrations com Flyway
+
+🛠️ Como executar localmente
+✅ Pré-requisitos
+
+Java 21
+
+MySQL rodando na porta padrão (3306)
+
+Maven
+
+📥 Passos
 # 1. Clone o repositório
 git clone https://github.com/seu-usuario/forumhub.git
 cd forumhub
 
-# 2. Configure o banco de dados
-# Edite src/main/resources/application.properties:
+# 2. Configure o banco de dados em src/main/resources/application.properties
 spring.datasource.url=jdbc:mysql://localhost:3306/forumhub
 spring.datasource.username=root
 spring.datasource.password=sua_senha
@@ -55,50 +63,45 @@ spring.datasource.password=sua_senha
 # 3. Rode a aplicação
 ./mvnw spring-boot:run
 
-
-
 📖 Documentação com Swagger
+
 Após rodar o projeto, acesse:
 
-bash
-http://localhost:8080/swagger-ui.html
-Por lá, é possível testar os endpoints diretamente pela interface.
+👉 http://localhost:8080/swagger-ui.html
 
-🔐 Segurança com JWT
-Endpoint de autenticação: POST /auth/login
+Por lá é possível testar os endpoints diretamente pela interface.
 
-Envie login e senha válidos
+🔐 Autenticação JWT
 
-Receba um token JWT e use no cabeçalho das próximas requisições:
+Endpoint de login: POST /auth/login
 
-http
+Envie usuário e senha válidos
+
+Receba um token JWT e utilize-o no cabeçalho das requisições:
+
 Authorization: Bearer seu_token_aqui
 
 🧾 Migrations com Flyway
-A estrutura do banco de dados é controlada pelo Flyway. Os arquivos .sql estão na pasta:
+
+A estrutura do banco de dados é controlada pelo Flyway.
+As migrations estão na pasta:
+
 src/main/resources/db/migration/
 
-Se uma migration falhar, você pode executar:
-bash
-./mvnw flyway:repair
 
+Se uma migration falhar, rode:
+
+./mvnw flyway:repair
 
 🗂️ Estrutura do projeto
 forumhub
-├── controller         # Camada REST
-├── dto                # Objetos de transferência de dados
-├── entity             # Entidades JPA
-├── repository         # Interfaces de acesso ao banco
-├── service            # Regras de negócio
-└── infra              # Segurança, exceções e configurações
+├── controller   # Endpoints REST
+├── dto          # Objetos de transferência de dados
+├── entity       # Entidades JPA
+├── repository   # Interfaces de acesso ao banco
+├── service      # Regras de negócio
+└── infra        # Segurança, exceções e configs
+
 📌 Status do projeto
-🟡 Em desenvolvimento — novas funcionalidades serão adicionadas em breve.
 
-👨‍💻 Autor
-Desenvolvido por Yago Carvalho
-📸 Instagram: @iyagocarvalhodev
-🔗 GitHub: github.com/YagoACarvalho
-
-⭐ Contribua
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para sugerir melhorias ou correções.
-
+🟡 Em desenvolvimento
